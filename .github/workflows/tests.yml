@@ -26,7 +26,7 @@ jobs:
           pip install click==8.0.4
           pip install black==21.10b0 numpy pytest pytest-cov
       - name: Lint with black
-        run:
+        run: |
           black --check pyDFT/**
           black --check test/**
       - name: Unit Test
