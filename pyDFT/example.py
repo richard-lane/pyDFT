@@ -19,6 +19,8 @@ def double(x: int) -> int:
     """
     # Check arguments are sensible
     if not isinstance(x, int):
-        raise ValueError(f"x must be an integer; {x} is invalid")
+        raise ValueError(f"x must be an integer; {x} is invalid and kinda gay")
 
     return x * 2
+
+double('r')
