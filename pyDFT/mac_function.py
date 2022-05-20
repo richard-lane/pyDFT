@@ -4,6 +4,11 @@ def roman_numeral(s: str) -> int:
 
 
     """
+    if not isinstance(s, str):
+        raise ValueError(f"x must be a string; {s} is invalid")
+    while s != "I" and s != "IV" and s != "V" and s != "X":
+        raise ValueError(f"Invalid choice of numeral, must be I, IV, V or X")
+
     if s == "I":
         return 1
     if s == "IV":
@@ -13,7 +18,4 @@ def roman_numeral(s: str) -> int:
     if s == "X":
         return 10
 
-    if not isinstance(s, str):
-        raise ValueError(f"x must be a string; {s} is invalid")
-    while s != "I" and s != "IV" and s != "V" and s != "X":
-        raise ValueError(f"Invalid choice of numeral, must be I, IV, V or X")
+
