@@ -1,12 +1,12 @@
 def roman_numeral(s: str) -> int:
-    """Takes a roman numeral, entered as 's' a string, and returns the corresponding
-    value as an integer
-
+    """
+    :param s: string to parse as a roman numeral
+    :returns: value of s as an integer
 
     """
     if not isinstance(s, str):
         raise ValueError(f"x must be a string; {s} is invalid")
-    while s != "I" and s != "IV" and s != "V" and s != "X":
+    if not s in {"I", "IV", "V", "X"}:
         raise ValueError(f"Invalid choice of numeral, must be I, IV, V or X")
 
     if s == "I":
@@ -17,5 +17,3 @@ def roman_numeral(s: str) -> int:
         return 5
     if s == "X":
         return 10
-
-

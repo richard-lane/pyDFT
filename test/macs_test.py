@@ -1,5 +1,6 @@
 import pytest
-from pyDFT import  mac_function
+from pyDFT import mac_function
+
 
 def test_numeral():
 
@@ -8,7 +9,8 @@ def test_numeral():
     :return:
     """
 
-    assert mac_function.roman_numeral('I') == 1
+    assert mac_function.roman_numeral("I") == 1
+
 
 def test_int():
     """
@@ -19,10 +21,11 @@ def test_int():
     with pytest.raises(ValueError):
         mac_function.roman_numeral(1)
 
+
 def test_incorrect_str():
     """
     Test if a numeral outside specified value is use it raises an error
 
     """
     with pytest.raises(ValueError):
-        mac_function.roman_numeral('VI')
+        mac_function.roman_numeral("VI")
