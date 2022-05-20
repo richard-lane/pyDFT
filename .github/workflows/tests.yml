@@ -22,6 +22,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          # For some reason the black linter breaks with new versions of click, so lock in an old version here
+          pip install click==8.0.4
           pip install black==21.10b0 numpy pytest pytest-cov
       - name: Lint with black
         run:
