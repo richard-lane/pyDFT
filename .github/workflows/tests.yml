@@ -1,0 +1,32 @@
+# This workflow will install python dependencies, run tests and lint with a single version of Python
+# For more information, google it
+
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  Tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      -uses: actions/checkout@v2
+      -name: Set up Python 3.10
+       uses: actions/setup-python@v2
+       with:
+        python-version: 3.9
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install black==21.10b0 numpy pytest pytest-cov
+      - name: Lint with black
+        run:
+          black --check pyDFT/**
+          black --check test/**
+      - name: Unit Test
+        run: |
+          pytest test/
